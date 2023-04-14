@@ -4,7 +4,7 @@ function fd --description 'fuzzy find a dir and cd into it'
             ~/Code \
             ~/Documents \
             ~/Documents/4-God/ \
-            ~/.dotfiles/ \
+            ~/.dotfiles \
         -mindepth 1 -maxdepth 1 -type d -name '[^.]*' \
         | fzf
     )
