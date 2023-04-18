@@ -43,6 +43,7 @@
   use 'preservim/vim-markdown'
 
   use 'Shirk/vim-gas'
+  use 'tikhomirov/vim-glsl'
 
   use {"shortcuts/no-neck-pain.nvim", tag = "*" }
   use 'eandrju/cellular-automaton.nvim'

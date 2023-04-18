@@ -1,6 +1,6 @@
 local colorscheme = 
-    "rose-pine"
-    -- "gruvbox"
+    -- "rose-pine"
+    "gruvbox"
     -- "catppuccin-latte"
     -- "catppuccin-mocha"
     -- "bluloco"
