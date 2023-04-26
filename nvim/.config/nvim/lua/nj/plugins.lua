@@ -32,7 +32,8 @@
           -- Snippets
           {'L3MON4D3/LuaSnip'},
           {'rafamadriz/friendly-snippets'},
-      }
+      },
+      disable = true,
   }
 
   use "AndrewRadev/tagalong.vim"
