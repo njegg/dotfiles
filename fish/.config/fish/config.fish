@@ -3,6 +3,8 @@ if status is-interactive
     set -gx TERMINAL kitty
     set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
+    set -gx ANDROID_HOME $HOME/android/sdk
+
     set -gx real_red "\033[38;2;255;0;0m"
 
     set fish_greeting
