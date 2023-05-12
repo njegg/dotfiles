@@ -37,3 +37,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- reload config
 vim.keymap.set("n", "<leader>r", ":so ~/.config/nvim/init.lua<CR>")
 
+-- select all
+vim.keymap.set("n", "<C-a>", "ggVG")
+

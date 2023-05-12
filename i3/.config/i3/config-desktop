@@ -221,8 +221,11 @@ bindsym button2 kill
 for_window [class="org.gnome.Nautilus"] floating enable
 for_window [class="org.gnome.clocks"] floating enable
 for_window [window_role="pop-up"] floating enable
+
 for_window [class="^.*"] border normal 1
-for_window [class="kitty"] border pixel 1
+for_window [class="kitty"] border pixel 1 
+for_window [class="Brave-browser"] border pixel 1
+for_window [class="firefox"] border pixel 1
 
 gaps inner 0
 

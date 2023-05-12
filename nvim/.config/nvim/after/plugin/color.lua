@@ -1,9 +1,8 @@
 local colorscheme = 
     -- "rose-pine"
-    "gruvbox"
+    -- "gruvbox"
     -- "catppuccin-latte"
-    -- "catppuccin-mocha"
-    -- "bluloco"
+    "catppuccin-mocha"
 
 vim.cmd.colorscheme(colorscheme)
 
