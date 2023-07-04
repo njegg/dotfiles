@@ -25,10 +25,12 @@ vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 
-vim.keymap.set("n", "<leader>e", ":Ex<CR>")
+vim.keymap.set("n", "<leader>e", ":Oil<CR>")
 
-vim.g.surround_98 = "**\r**"
+vim.g.surround_98 = "<b>\r</b>"
+-- vim.g.surround_98 = "**\r**"
 vim.cmd("nmap <leader>b ysiwb")
+vim.cmd("vmap <leader>b Sb")
 
 -- epik move in v mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -36,7 +38,4 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- reload config
 vim.keymap.set("n", "<leader>r", ":so ~/.config/nvim/init.lua<CR>")
-
--- select all
-vim.keymap.set("n", "<C-a>", "ggVG")
 

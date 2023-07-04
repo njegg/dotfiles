@@ -6,7 +6,8 @@ function fd --description 'fuzzy find a dir and cd into it'
                 ~/Code \
                 ~/Documents \
                 ~/Documents/4-God/ \
-                ~/.dotfiles
+                ~/.dotfiles \
+                ~/Code/calog
     end
 
     set dir $(find $dirs \

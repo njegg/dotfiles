@@ -22,3 +22,4 @@ require'nvim-treesitter.configs'.setup {
     disable = { "markdown" },
   },
 }
+

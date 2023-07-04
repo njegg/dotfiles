@@ -1,6 +1,6 @@
 local lsp = require("lsp-zero")
 
-lsp.preset("recommended")
+lsp.preset({})
 
 lsp.on_attach(function(client, bufnr)
     local opts = {buffer = bufnr, remap = false}
@@ -40,7 +40,6 @@ cmp.setup({
     },
     preselect = 'item',
     completion = {
-        completeopt = 'menu,menuone,noinsert',
         autocomplete = false,
     },
     window = {
