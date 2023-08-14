@@ -14,6 +14,8 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>c", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
+    vim.keymap.set("n", "<F2>", function() vim.lsp.buf.rename() end, opts)
 end)
 
 lsp.setup()
@@ -37,6 +39,7 @@ cmp.setup({
     },
     sources = {
         {name = 'nvim_lsp'},
+        {name = 'buffer'},
     },
     preselect = 'item',
     completion = {

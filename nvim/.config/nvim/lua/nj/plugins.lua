@@ -60,7 +60,6 @@
   use 'folke/tokyonight.nvim'
 
   use 'andweeb/presence.nvim'
-  use 'subnut/nvim-ghost.nvim'
 
   use 'github/copilot.vim'
 end)

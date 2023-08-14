@@ -228,6 +228,8 @@ for_window [class="^.*"] border normal 1
 for_window [class="kitty"] border pixel 1 
 for_window [class="Brave-browser"] border pixel 1
 for_window [class="firefox"] border pixel 1
+for_window [class="obsidian"] border pixel 1
+for_window [class="Code"] border pixel 1
 
 gaps inner 0
 
