@@ -15,7 +15,6 @@ vim.opt.expandtab = true
 vim.opt.so = 3
 vim.opt.smartindent = true
 vim.opt.wrap = false
-vim.o.formatoptions = vim.o.formatoptions:gsub("ro", "")
 vim.opt.foldmethod = 'manual'
 vim.opt.conceallevel = 2
 
@@ -47,4 +46,8 @@ vim.cmd("iab amogus ඞ")
 
 vim.opt.exrc = true
 vim.opt.secure = true
+
+vim.cmd("set formatoptions-=c")
+vim.cmd("set formatoptions-=o") 
+vim.cmd("set formatoptions-=r")
 

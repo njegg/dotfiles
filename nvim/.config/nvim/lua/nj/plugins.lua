@@ -26,10 +26,22 @@
 
       -- Autocompletion
       {'hrsh7th/nvim-cmp'},     -- Required
+      {'hrsh7th/cmp-buffer'},     -- Required
       {'hrsh7th/cmp-nvim-lsp'}, -- Required
       {'L3MON4D3/LuaSnip'},     -- Required
     }
   }
+
+  use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+          'nvim-tree/nvim-web-devicons', -- optional
+      },
+  }
+
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup()
+  end}
 
   use "folke/todo-comments.nvim"
 
@@ -52,6 +64,8 @@
   -- Status Line and Bufferline
   use "nvim-lualine/lualine.nvim"
 
+  use "junegunn/goyo.vim"
+
   -- Themes
   use { "catppuccin/nvim", as = "catppuccin" }
   use { 'rose-pine/neovim', as = 'rose-pine', }
@@ -61,6 +75,6 @@
 
   use 'andweeb/presence.nvim'
 
-  use 'github/copilot.vim'
+  -- use 'github/copilot.vim'
 end)
 

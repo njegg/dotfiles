@@ -240,8 +240,10 @@ gaps inner 0
 exec --no-startup-id "feh --bg-fill '/home/nj/Pictures/black.png'"
 
 # Speed 
-exec --no-startup-id "xset r rate 180 75" 
+exec --no-startup-id "xset r rate 150 100"
 
 # Swap Super and Alt because chinese keyboard brokey
 # exec --no-startup-id "setxkbmap -option altwin:swap_alt_win"
+
+bindsym $mod+z exec --no-startup-id "boomer"
 

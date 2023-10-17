@@ -4,6 +4,13 @@ if status is-interactive
     set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
     set -gx ANDROID_HOME $HOME/android/sdk
+    set -gx JAVA_HOME /usr/lib/jvm/default/bin/java
+
+    set -gx FD_DIRS ~/\
+                ~/Code \
+                ~/Documents \
+                ~/Documents/4-God/ \
+                ~/.dotfiles
 
     set -gx real_red "\033[38;2;255;0;0m"
 
@@ -13,3 +20,7 @@ if status is-interactive
 
     set -gx FZF_DEFAULT_COMMAND "find -L"
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
