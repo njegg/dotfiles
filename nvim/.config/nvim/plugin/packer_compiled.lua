@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/nj/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["dvd.nvim"] = {
+    loaded = true,
+    path = "/home/nj/.local/share/nvim/site/pack/packer/start/dvd.nvim",
+    url = "https://github.com/njegg/dvd.nvim"
+  },
   ["fzf.vim"] = {
     loaded = true,
     path = "/home/nj/.local/share/nvim/site/pack/packer/start/fzf.vim",
@@ -143,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nj/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/home/nj/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
   },
   ["no-neck-pain.nvim"] = {
     loaded = true,

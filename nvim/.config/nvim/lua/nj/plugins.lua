@@ -56,7 +56,14 @@
   use 'tikhomirov/vim-glsl'
 
   use {"shortcuts/no-neck-pain.nvim", tag = "*" }
-  use 'eandrju/cellular-automaton.nvim'
+
+  use {
+      'njegg/dvd.nvim',
+      requires = {
+          {'eandrju/cellular-automaton.nvim'},
+          {'uga-rosa/utf8.nvim'}
+      }
+  }
 
   -- Icons
   use "nvim-tree/nvim-web-devicons"
@@ -75,8 +82,8 @@
 
   use 'andweeb/presence.nvim'
 
-  use 'uga-rosa/utf8.nvim'
-  
+  use 'folke/neodev.nvim'
+
   -- use 'github/copilot.vim'
 end)
 
