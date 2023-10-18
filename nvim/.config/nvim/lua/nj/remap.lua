@@ -27,8 +27,10 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 
 vim.keymap.set("n", "<leader>e", ":Oil<CR>")
 
-vim.g.surround_98 = "**\r**"
+vim.g.surround_98 = "<b>\r</b>"
+-- vim.g.surround_98 = "**\r**"
 vim.cmd("nmap <leader>b ysiwb")
+vim.cmd("vmap <leader>b Sb")
 
 -- epik move in v mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

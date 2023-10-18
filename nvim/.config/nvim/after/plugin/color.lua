@@ -7,9 +7,11 @@ local colorscheme =
 
 vim.cmd.colorscheme(colorscheme)
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalSB", { bg = "none" })
+local bg = "#101010"
+
+vim.api.nvim_set_hl(0, "Normal", { bg = bg })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = bg })
+vim.api.nvim_set_hl(0, "NormalSB", { bg = bg })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#696969" })
