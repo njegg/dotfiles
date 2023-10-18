@@ -37,6 +37,8 @@
         disable = false, --<<<<<<<<<<<
     }
 
+    use 'stevearc/oil.nvim'
+
     use 'AndrewRadev/tagalong.vim'
     use {
         'windwp/nvim-autopairs',
@@ -46,13 +48,20 @@
     -- use 'ekickx/clipboard-image.nvim'
     -- use {'iamcco/markdown-preview.nvim', run = 'cd app & yarn install'}
     -- use 'godlygeek/tabular'
-    use 'preservim/vim-markdown'
+    -- use 'preservim/vim-markdown'
 
-    use 'Shirk/vim-gas'
+    -- use 'Shirk/vim-gas'
     use 'tikhomirov/vim-glsl'
 
     use {"shortcuts/no-neck-pain.nvim", tag = "*" }
-    use 'eandrju/cellular-automaton.nvim'
+
+    use {
+        'njegg/dvd.nvim',
+        requires = {
+            {'eandrju/cellular-automaton.nvim'},
+            {'uga-rosa/utf8.nvim'}
+        }
+    }
 
     -- Icons
     use "nvim-tree/nvim-web-devicons"
@@ -66,7 +75,10 @@
     use 'Mofiqul/vscode.nvim'
     use 'morhetz/gruvbox'
     use 'folke/tokyonight.nvim'
+    use 'NLKNguyen/papercolor-theme'
+    use 'nightsense/seabird'
+    use 'chriskempson/base16-vim'
 
-    use 'andweeb/presence.nvim'
+    -- use 'andweeb/presence.nvim'
 end)
 

@@ -1,7 +1,7 @@
 if status is-interactive
     set -gx EDITOR nvim
     set -gx TERMINAL kitty
-    set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+    # set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
     set -gx ANDROID_HOME $HOME/android/sdk
 
@@ -13,3 +13,7 @@ if status is-interactive
 
     set -gx FZF_DEFAULT_COMMAND "find -L"
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

@@ -25,7 +25,7 @@ vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 
-vim.keymap.set("n", "<leader>e", ":Ex<CR>")
+vim.keymap.set("n", "<leader>e", ":Oil<CR>")
 
 vim.g.surround_98 = "**\r**"
 vim.cmd("nmap <leader>b ysiwb")
@@ -38,5 +38,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>r", ":so ~/.config/nvim/init.lua<CR>")
 
 -- select all
-vim.keymap.set("n", "<C-a>", "ggVG")
+vim.keymap.set("n", "<M-a>", "ggVG")
 
+vim.keymap.set("n", "<leader>dvd", ":CellularAutomaton dvd<CR>")

@@ -1,6 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
+SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:\x7e/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_list\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e\x7e/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e\x7e/\x2econfig/fish/functions/nvm\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e\x7e/\x2econfig/fish/completions/nvm\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/nvm\x2efish
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:4D5566
 SETUVAR fish_color_cancel:\x2d\x2dreverse
 SETUVAR fish_color_command:39BAE6
@@ -40,4 +43,4 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dE6B450
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/nj/android/sdk/cmdline\x2dtools/platform\x2dtools\x1e/home/nj/android/sdk/cmdline\x2dtools/tools/bin\x1e/home/nj/android/sdk/cmdline\x2dtools/tools\x1e/home/nj/\x2ecargo/bin\x1e/home/nj/\x2eghcup/bin
+SETUVAR fish_user_paths:/home/nj/android/sdk/platform\x2dtools\x1e/home/nj/android/sdk\x1e/home/nj/bin\x1e/home/nj/zig\x1e/home/nj/android/sdk/cmdline\x2dtools/platform\x2dtools\x1e/home/nj/android/sdk/cmdline\x2dtools/tools/bin\x1e/home/nj/android/sdk/cmdline\x2dtools/tools\x1e/home/nj/\x2ecargo/bin\x1e/home/nj/\x2eghcup/bin
