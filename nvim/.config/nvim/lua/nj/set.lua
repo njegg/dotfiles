@@ -51,3 +51,4 @@ vim.cmd("set formatoptions-=c")
 vim.cmd("set formatoptions-=o") 
 vim.cmd("set formatoptions-=r")
 
+vim.cmd("set diffopt+=vertical")

@@ -75,6 +75,8 @@
 
   use 'andweeb/presence.nvim'
 
+  use 'uga-rosa/utf8.nvim'
+  
   -- use 'github/copilot.vim'
 end)
 
