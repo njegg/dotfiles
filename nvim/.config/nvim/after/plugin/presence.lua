@@ -10,7 +10,7 @@ require("presence").setup({
     enable_line_number  = true,                      -- Displays the current line number instead of the current project
     blacklist           = {},                         -- A list of strings or Lua patterns that disable Rich Presence if the current file name, path, or workspace matches
     buttons             = {                          -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
-        { label = "Onlyfans link", url = "https://shorturl.at/brJKV" },
+        { label = "Onlyfans link", url = "https://r.mtdv.me/njegg-onlyfans" },
     },
     file_assets         = {},                         -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
     show_time           = true,                       -- Show the timer

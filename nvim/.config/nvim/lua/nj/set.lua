@@ -47,6 +47,8 @@ vim.cmd("iab amogus ඞ")
 vim.opt.exrc = true
 vim.opt.secure = true
 
+vim.opt.ignorecase = true
+
 vim.cmd("set formatoptions-=c")
 vim.cmd("set formatoptions-=o") 
 vim.cmd("set formatoptions-=r")

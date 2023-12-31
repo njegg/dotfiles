@@ -29,6 +29,7 @@
       {'hrsh7th/cmp-buffer'},     -- Required
       {'hrsh7th/cmp-nvim-lsp'}, -- Required
       {'L3MON4D3/LuaSnip'},     -- Required
+      {'hrsh7th/cmp-path'},
     }
   }
 
@@ -44,8 +45,8 @@
   end}
 
   use "folke/todo-comments.nvim"
-
   use 'stevearc/oil.nvim'
+  use 'wsdjeg/vim-fetch'
 
   use 'AndrewRadev/tagalong.vim'
 
@@ -75,7 +76,7 @@
 
   -- Themes
   use { "catppuccin/nvim", as = "catppuccin" }
-  use { 'rose-pine/neovim', as = 'rose-pine', }
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
   use 'Mofiqul/vscode.nvim'
   use 'morhetz/gruvbox'
   use 'folke/tokyonight.nvim'
