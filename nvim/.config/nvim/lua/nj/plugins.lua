@@ -75,5 +75,4 @@ local plugins = {
   -- "andweeb/presence.nvim",
 }
 
-
 require("lazy").setup(plugins, {});

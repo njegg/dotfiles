@@ -1,7 +1,7 @@
 if status is-interactive
     set -gx EDITOR nvim
     set -gx TERMINAL kitty
-    set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+    # set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
     set -gx ANDROID_HOME $HOME/android/sdk
     set -gx JAVA_HOME /usr/lib/jvm/default/bin/java

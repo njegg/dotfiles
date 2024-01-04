@@ -1,4 +1,4 @@
-function xclip --description 'alias xclip=xclip -selection c'
- command xclip -selection c $argv
+function xclip --description 'alias xclip=xclip -selection clipboard'
+ command xclip -selection clipboard $argv
         
 end
