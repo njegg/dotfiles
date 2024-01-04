@@ -1,74 +1,55 @@
-local lsp = require("lsp-zero")
+local lsp_zero = require("lsp-zero")
 
-lsp.preset('recommended')
+lsp_zero.preset('recommended')
 
-lsp.on_attach(function(client, bufnr)
-    local opts = {buffer = bufnr, remap = false}
+lsp_zero.on_attach(function(_, bufnr)
+  local opts = { buffer = bufnr, remap = false }
 
-    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-    vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
-    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-    vim.keymap.set("n", "ge", function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-    vim.keymap.set("n", "<leader>c", function() vim.lsp.buf.code_action() end, opts)
-    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-
-    vim.keymap.set("n", "<F2>", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+  vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
+  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+  vim.keymap.set("n", "<leader>lws", function() vim.lsp.buf.workspace_symbol() end, opts)
+  vim.keymap.set("n", "<leader>ld", function() vim.diagnostic.open_float() end, opts)
+  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+  vim.keymap.set("n", "<leader>c", function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp.setup()
+lsp_zero.setup()
 
-local cmp = require('cmp')
-local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
-
-cmp.setup({
-    mapping = {
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select_opts),
-        ['<C-n>'] = cmp.mapping(function()
-            if cmp.visible() then
-                cmp.select_next_item(cmp_select_opts)
-            else
-                cmp.complete()
-            end
-        end),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        ["<C-Space>"] = cmp.mapping.complete(),
-    },
-    sources = {
-        {name = 'path'},
-        {name = 'nvim_lsp'},
-        {name = 'buffer'},
-    },
-    snippet = {
-        expand = function (args)
-            require('luasnip').lsp_expand(args.body)
-        end,
-    },
-    preselect = 'item',
-    completion = {
-        completeopt = 'menu,menuone,noinsert',
-    },
-    window = {
-        documentation = {
-            max_height = 15,
-            max_width = 60,
-        }
-    },
-    formatting = {
-        fields = {'abbr', 'menu', 'kind'},
-        format = function(entry, item)
-            local short_name = {
-                nvim_lsp = 'LSP',
-                nvim_lua = 'nvim'
-            }
-
-            local menu_name = short_name[entry.source.name] or entry.source.name
-
-            item.menu = string.format('[%s]', menu_name)
-            return item
-        end,
-    },
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {},
+  handlers = {
+    lsp_zero.default_setup,
+    lua_ls = function()
+      local lua_opts = lsp_zero.nvim_lua_ls()
+      require('lspconfig').lua_ls.setup(lua_opts)
+    end,
+  }
 })
 
+local cmp = require('cmp')
+local cmp_format = lsp_zero.cmp_format()
+
+cmp.setup({
+  formatting = cmp_format,
+  mapping = cmp.mapping.preset.insert({
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    ['<C-space>'] = cmp.mapping.complete(),
+
+    ["<CR>"] = cmp.mapping({
+      i = function(fallback)
+        if cmp.visible() and cmp.get_active_entry() then
+          cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+        else
+          fallback()
+        end
+      end,
+      s = cmp.mapping.confirm({ select = true }),
+      c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+    }),
+  }),
+})

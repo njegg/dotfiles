@@ -1,90 +1,79 @@
-﻿return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
+﻿local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-  use 'tpope/vim-surround'
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-fugitive'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-  use 'airblade/vim-gitgutter'
 
-  use 'mbbill/undotree'
+local plugins = {
+  "tpope/vim-surround",
+  "tpope/vim-commentary",
+  "tpope/vim-fugitive",
 
-  use 'nvim-lua/plenary.nvim'
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', }
-  use 'ThePrimeagen/harpoon'
-  use 'junegunn/fzf.vim'
+  "airblade/vim-gitgutter",
 
-  use { 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} }
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    requires = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+  "mbbill/undotree",
 
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
-      {'hrsh7th/cmp-buffer'},     -- Required
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
-      {'hrsh7th/cmp-path'},
-    }
-  }
+  "nvim-lua/plenary.nvim",
+  { "nvim-telescope/telescope.nvim", tag = "0.1.x", },
+  "ThePrimeagen/harpoon",
+  "junegunn/fzf.vim",
 
-  use {
-      'nvim-tree/nvim-tree.lua',
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+
+  -- LSP
+  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+  {'neovim/nvim-lspconfig'},
+  {'williamboman/mason.nvim'},
+  {'williamboman/mason-lspconfig.nvim'},
+
+  -- Autocompletion
+  {'hrsh7th/nvim-cmp'},
+  {'hrsh7th/cmp-nvim-lsp'},
+  {'L3MON4D3/LuaSnip'},
+
+  "folke/todo-comments.nvim",
+  "stevearc/oil.nvim",
+  "wsdjeg/vim-fetch",
+
+  "AndrewRadev/tagalong.vim",
+
+  "ekickx/clipboard-image.nvim",
+  "preservim/vim-markdown",
+
+  "Shirk/vim-gas",
+  "tikhomirov/vim-glsl",
+
+  {"shortcuts/no-neck-pain.nvim", tag = "*" },
+
+  {
+      "njegg/dvd.nvim",
       requires = {
-          'nvim-tree/nvim-web-devicons', -- optional
-      },
-  }
-
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-      require("toggleterm").setup()
-  end}
-
-  use "folke/todo-comments.nvim"
-  use 'stevearc/oil.nvim'
-  use 'wsdjeg/vim-fetch'
-
-  use 'AndrewRadev/tagalong.vim'
-
-  use 'ekickx/clipboard-image.nvim'
-  use 'preservim/vim-markdown'
-
-  use 'Shirk/vim-gas'
-  use 'tikhomirov/vim-glsl'
-
-  use {"shortcuts/no-neck-pain.nvim", tag = "*" }
-
-  use {
-      'njegg/dvd.nvim',
-      requires = {
-          {'eandrju/cellular-automaton.nvim'},
-          {'uga-rosa/utf8.nvim'}
+          {"eandrju/cellular-automaton.nvim"},
+          {"uga-rosa/utf8.nvim"}
       }
-  }
+  },
 
-  -- Icons
-  use "nvim-tree/nvim-web-devicons"
-
-  -- Status Line and Bufferline
-  use "nvim-lualine/lualine.nvim"
-
-  use "junegunn/goyo.vim"
+  "nvim-lualine/lualine.nvim",
 
   -- Themes
-  use { "catppuccin/nvim", as = "catppuccin" }
-  use({ 'rose-pine/neovim', as = 'rose-pine' })
-  use 'Mofiqul/vscode.nvim'
-  use 'morhetz/gruvbox'
-  use 'folke/tokyonight.nvim'
+  { "catppuccin/nvim", as = "catppuccin" },
+  { "rose-pine/neovim", as = "rose-pine" },
+  "morhetz/gruvbox",
+  "folke/tokyonight.nvim",
 
-  use 'andweeb/presence.nvim'
+  "nvim-tree/nvim-web-devicons",
+  -- "nvim-tree/nvim-tree.lua",
+  -- "andweeb/presence.nvim",
+}
 
-  use 'folke/neodev.nvim'
 
-  -- use 'github/copilot.vim'
-end)
-
+require("lazy").setup(plugins, {});
