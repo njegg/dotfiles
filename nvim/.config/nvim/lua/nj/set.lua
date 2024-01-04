@@ -49,8 +49,7 @@ vim.opt.secure = true
 
 vim.opt.ignorecase = true
 
-vim.cmd("set formatoptions-=c")
-vim.cmd("set formatoptions-=o") 
-vim.cmd("set formatoptions-=r")
-
 vim.cmd("set diffopt+=vertical")
+
+vim.o.formatoptions = vim.o.formatoptions:gsub("ro", "")
+
