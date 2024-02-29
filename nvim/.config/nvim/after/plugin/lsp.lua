@@ -14,6 +14,7 @@ lsp_zero.on_attach(function(_, bufnr)
   vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
   vim.keymap.set("n", "<leader>c", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set("n", "<leader>r", function() vim.lsp.buf.rename() end, opts)
 end)
 
 lsp_zero.setup()
@@ -27,15 +28,23 @@ require('mason-lspconfig').setup({
       local lua_opts = lsp_zero.nvim_lua_ls()
       require('lspconfig').lua_ls.setup(lua_opts)
     end,
-  }
+  },
 })
 
 local cmp = require('cmp')
 local cmp_format = lsp_zero.cmp_format()
+local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+    { name = 'buffer' },
+  },
   formatting = cmp_format,
   mapping = cmp.mapping.preset.insert({
+    ['<Tab>'] = cmp_action.tab_complete(),
+    ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
     ['<C-space>'] = cmp.mapping.complete(),
@@ -50,6 +59,6 @@ cmp.setup({
       end,
       s = cmp.mapping.confirm({ select = true }),
       c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-    }),
+    })
   }),
 })

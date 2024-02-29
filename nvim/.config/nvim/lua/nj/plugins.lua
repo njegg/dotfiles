@@ -34,11 +34,17 @@ local plugins = {
   {'neovim/nvim-lspconfig'},
   {'williamboman/mason.nvim'},
   {'williamboman/mason-lspconfig.nvim'},
+  -- {'leafOfTree/vim-svelte-plugin'},
+  {'othree/html5.vim'},
+  {'pangloss/vim-javascript'},
+  {'evanleck/vim-svelte'},
 
   -- Autocompletion
   {'hrsh7th/nvim-cmp'},
   {'hrsh7th/cmp-nvim-lsp'},
   {'L3MON4D3/LuaSnip'},
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
 
   "folke/todo-comments.nvim",
   "stevearc/oil.nvim",
@@ -54,13 +60,9 @@ local plugins = {
 
   {"shortcuts/no-neck-pain.nvim", tag = "*" },
 
-  {
-      "njegg/dvd.nvim",
-      requires = {
-          {"eandrju/cellular-automaton.nvim"},
-          {"uga-rosa/utf8.nvim"}
-      }
-  },
+  -- "njegg/dvd.nvim",
+  -- {"eandrju/cellular-automaton.nvim"},
+  -- {"uga-rosa/utf8.nvim"},
 
   "nvim-lualine/lualine.nvim",
 
@@ -71,8 +73,9 @@ local plugins = {
   "folke/tokyonight.nvim",
 
   "nvim-tree/nvim-web-devicons",
-  -- "nvim-tree/nvim-tree.lua",
-  -- "andweeb/presence.nvim",
+
+  "nvim-tree/nvim-tree.lua",
+  "andweeb/presence.nvim",
 }
 
 require("lazy").setup(plugins, {});

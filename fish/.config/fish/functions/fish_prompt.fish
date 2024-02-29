@@ -5,6 +5,7 @@ function fish_prompt
   set_color yellow; echo -n '@'
   set_color normal; echo -n $hostname
   printf "$real_red] "
+  set_color blue
   echo -n (prompt_pwd)
   set_color white
   echo -n (fish_git_prompt)

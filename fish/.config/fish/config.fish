@@ -4,7 +4,7 @@ if status is-interactive
     # set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
     set -gx ANDROID_HOME $HOME/android/sdk
-    set -gx JAVA_HOME /usr/lib/jvm/default/bin/java
+    set -gx JAVA_HOME /usr/lib/jvm/default/
 
     set -gx FD_DIRS ~/\
                 ~/Code \
