@@ -7,10 +7,9 @@ if status is-interactive
     set -gx JAVA_HOME /usr/lib/jvm/default/
 
     set -gx FD_DIRS ~/\
-                ~/Code \
+                ~/code \
                 ~/Documents \
-                ~/Documents/4-God/ \
-                ~/.dotfiles
+                ~/dotfiles
 
     set -gx real_red "\033[38;2;255;0;0m"
 
@@ -24,3 +23,5 @@ end
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+source /opt/asdf-vm/asdf.fish
