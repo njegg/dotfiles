@@ -1,3 +1,3 @@
-function l --wraps='exa -H -l --git -all --group-directories-first' --description 'alias l=exa -H -l --git -all --group-directories-first'
-  exa -H -l --git -all --group-directories-first $argv; 
+function l --wraps='ls -alh' --wraps='eza -H -l --git -all --group-directories-first' --description 'alias l=eza -H -l --git -all --group-directories-first'
+  eza -H -l --git -all --group-directories-first $argv
 end

@@ -3,7 +3,7 @@
 echo Stowing...
 echo
 
-stow -v $(ls --ignore run.sh)
+stow -v $(ls)
 
 echo
 

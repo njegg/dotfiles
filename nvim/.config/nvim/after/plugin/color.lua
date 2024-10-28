@@ -1,8 +1,8 @@
 local none
 
 local colorscheme =
-    "rose-pine"
-    -- "gruvbox"
+    -- "rose-pine"
+    "gruvbox"
     -- "catppuccin-latte"
     -- "catppuccin-mocha"
     -- "base16-circus"
@@ -29,30 +29,29 @@ vim.cmd.colorscheme(colorscheme)
 
 -- Transparent Background
 
-vim.api.nvim_set_hl(0, "Normal", { guibg=none, ctermbg=none })
-vim.api.nvim_set_hl(0, "NonText", { guibg=none, ctermbg=none })
-vim.api.nvim_set_hl(0, "NormalSB", { guibg=none, ctermbg=none })
-vim.api.nvim_set_hl(0, "NormalNC", { guibg=none, ctermbg=none })
-vim.api.nvim_set_hl(0, "NormalFloat", { guibg=none, ctermbg=none })
-vim.api.nvim_set_hl(0, "SignColumn", { guibg=none, ctermbg=none, bg=none })
-vim.api.nvim_set_hl(0, "FloatBorder", { guibg=none, ctermbg=none, fg='#696969'})
-vim.api.nvim_set_hl(0, "EndOfBuffer", { bg=none, fg=none })
+-- vim.api.nvim_set_hl(0, "Normal", { guibg=none, ctermbg=none })
+-- vim.api.nvim_set_hl(0, "NonText", { guibg=none, ctermbg=none })
+-- vim.api.nvim_set_hl(0, "NormalSB", { guibg=none, ctermbg=none })
+-- vim.api.nvim_set_hl(0, "NormalNC", { guibg=none, ctermbg=none })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { guibg=none, ctermbg=none })
+-- vim.api.nvim_set_hl(0, "SignColumn", { guibg=none, ctermbg=none, bg=none })
+-- vim.api.nvim_set_hl(0, "FloatBorder", { guibg=none, ctermbg=none, fg='#696969'})
+-- vim.api.nvim_set_hl(0, "EndOfBuffer", { bg=none, fg=none })
 
 
 
 -- Common
 
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#696969" })
-vim.api.nvim_set_hl(0, "SignColumn", { guibg=none, ctermbg=none, bg=none })
-vim.api.nvim_set_hl(0, "MatchParen", { cterm = none, bg = "#426969" })
-vim.api.nvim_set_hl(0, "GitGutterAdd", { bg=none })
-vim.api.nvim_set_hl(0, "GitGutterChange", { bg=none })
-vim.api.nvim_set_hl(0, "GitGutterDelete", { bg=none })
-vim.cmd("highlight GitGutterAdd    guifg=#31748f ctermfg=2");
-vim.cmd("highlight GitGutterChange guifg=#ebbcba ctermfg=3");
-vim.cmd("highlight GitGutterDelete guifg=#eb6f92 ctermfg=1");
+-- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#696969" })
+-- vim.api.nvim_set_hl(0, "SignColumn", { guibg=none, ctermbg=none, bg=none })
+-- vim.api.nvim_set_hl(0, "MatchParen", { cterm = none, bg = "#426969" })
+-- vim.api.nvim_set_hl(0, "GitGutterAdd", { bg=none })
+-- vim.api.nvim_set_hl(0, "GitGutterChange", { bg=none })
+-- vim.api.nvim_set_hl(0, "GitGutterDelete", { bg=none })
+-- vim.cmd("highlight GitGutterAdd    guifg=#31748f ctermfg=2");
+-- vim.cmd("highlight GitGutterChange guifg=#ebbcba ctermfg=3");
+-- vim.cmd("highlight GitGutterDelete guifg=#eb6f92 ctermfg=1");
 
 
-vim.opt.fillchars = { vert = '|' , horiz = '-', eob = ' ' }
+-- vim.opt.fillchars = { vert = '|' , horiz = '-', eob = ' ' }
 -- vim.opt.fillchars = { vert = 'ඞ' } --, horiz = 'ඞ' }
-
