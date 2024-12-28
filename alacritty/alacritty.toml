@@ -1,0 +1,11 @@
+[colors.primary]
+background = "#282828"
+
+[shell]
+program = "zellij"
+
+[window]
+opacity = 0.9
+
+[font]
+normal = { family = "0xProto Nerd Font", style="Regular" }
